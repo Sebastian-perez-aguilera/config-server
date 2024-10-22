@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: apiGateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: cities-service
+          uri: lb://cities-service
+          predicates:
+            - Path=/cities/get
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
+          springframework: INFO
+        springframework.cloud: DEBUG

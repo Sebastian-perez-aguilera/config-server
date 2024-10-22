@@ -1,0 +1,10 @@
+server:
+  port:8320
+  
+spring:
+  application:
+    name:Config-Server
+  
+  
+
+  
